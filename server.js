@@ -9,17 +9,20 @@ const posts = require("./routes/api/posts");
 
 const app = express();
 
+// Fix deprecation warnings
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+
 // Body Parser middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// const db = require('./config/keys');
+const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
-  .connect("mongodb://hdgknsn:lino7196@ds133932.mlab.com:33932/devconnector", {
-    useNewUrlParser: true
-  })
+  .connect(db)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
