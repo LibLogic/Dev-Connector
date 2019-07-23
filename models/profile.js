@@ -46,8 +46,7 @@ const ProfileSchema = new Schema({
         required: true
       },
       location: {
-        type: String,
-        required: true
+        type: String
       },
       from: {
         type: Date,
@@ -67,7 +66,7 @@ const ProfileSchema = new Schema({
   ],
   education: [
     {
-      School: {
+      school: {
         type: String,
         required: true
       },
