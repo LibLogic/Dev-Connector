@@ -1,8 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser } from "./actions/authActions";
-import { logoutUser } from "./actions/authActions";
+import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
 import store from "./store";
@@ -35,7 +34,7 @@ if (localStorage.jwtToken) {
   }
 }
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <Router>
@@ -51,6 +50,6 @@ function App() {
       </Router>
     </Provider>
   );
-}
+};
 
 export default App;
