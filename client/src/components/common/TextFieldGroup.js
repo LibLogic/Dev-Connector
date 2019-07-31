@@ -3,6 +3,7 @@ import classnames from "classnames";
 import PropTypes from "prop-types";
 
 const TextFieldGroup = ({
+  autoComplete,
   name,
   placeholder,
   value,
@@ -16,7 +17,7 @@ const TextFieldGroup = ({
   return (
     <div className="form-group">
       <input
-        autoComplete=""
+        autoComplete={autoComplete}
         type={type}
         className={classnames("form-control form-control-lg", {
           "is-invalid": error
@@ -34,6 +35,7 @@ const TextFieldGroup = ({
 };
 
 TextFieldGroup.propTypes = {
+  autoComplete: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
@@ -45,7 +47,8 @@ TextFieldGroup.propTypes = {
 };
 
 TextFieldGroup.defaultProps = {
-  type: "text"
+  type: "text",
+  autoComplete: ""
 };
 
 export default TextFieldGroup;
