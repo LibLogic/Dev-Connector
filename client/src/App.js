@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser } from "./actions/authActions";
+import { logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import jwt_decode from "jwt-decode";
 import store from "./store";
@@ -34,24 +35,22 @@ if (localStorage.jwtToken) {
   }
 }
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <Route exact path="/" component={Landing} />
-            <div className="container">
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-            </div>
-            <Footer />
+function App() {
+  return (
+    <Provider store={store}>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/" component={Landing} />
+          <div className="container">
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/login" component={Login} />
           </div>
-        </Router>
-      </Provider>
-    );
-  }
+          <Footer />
+        </div>
+      </Router>
+    </Provider>
+  );
 }
 
 export default App;
