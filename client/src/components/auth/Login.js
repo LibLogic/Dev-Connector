@@ -15,7 +15,7 @@ class Login extends Component {
   }
 
   componentDidMount() {
-    if (this.props.auth.isAutenticated) {
+    if (this.props.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
     }
   }
@@ -48,7 +48,6 @@ class Login extends Component {
 
   render() {
     const { errors } = this.state;
-    // console.log(errors.response);
 
     return (
       <div className="login">
