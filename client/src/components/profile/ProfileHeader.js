@@ -14,7 +14,7 @@ class ProfileHeader extends Component {
                 <img
                   className="rounded-circle"
                   src={profile.user.avatar}
-                  alt=""
+                  alt="avatar"
                 />
               </div>
             </div>
@@ -31,7 +31,7 @@ class ProfileHeader extends Component {
                 {isEmpty(profile.website) ? null : (
                   <a
                     className="text-white p-2"
-                    href={profile.website}
+                    href={`https://${profile.website}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -41,7 +41,7 @@ class ProfileHeader extends Component {
                 {isEmpty(profile.social && profile.social.twitter) ? null : (
                   <a
                     className="text-white p-2"
-                    href={profile.social.twitter}
+                    href={`https://${profile.social.twitter}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -51,7 +51,7 @@ class ProfileHeader extends Component {
                 {isEmpty(profile.social && profile.social.facebook) ? null : (
                   <a
                     className="text-white p-2"
-                    href={profile.social.facebook}
+                    href={`https://${profile.social.facebook}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -61,7 +61,7 @@ class ProfileHeader extends Component {
                 {isEmpty(profile.social && profile.social.linkedin) ? null : (
                   <a
                     className="text-white p-2"
-                    href={profile.social.linkedin}
+                    href={`https://${profile.social.linkedin}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -71,7 +71,7 @@ class ProfileHeader extends Component {
                 {isEmpty(profile.social && profile.social.youtube) ? null : (
                   <a
                     className="text-white p-2"
-                    href={profile.social.youtube}
+                    href={`https://${profile.social.youtube}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -81,7 +81,7 @@ class ProfileHeader extends Component {
                 {isEmpty(profile.social && profile.social.instagram) ? null : (
                   <a
                     className="text-white p-2"
-                    href={profile.social.instagram}
+                    href={`https://${profile.social.instagram}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
