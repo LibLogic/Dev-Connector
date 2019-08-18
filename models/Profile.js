@@ -29,6 +29,9 @@ const ProfileSchema = new Schema({
     type: [String],
     required: true
   },
+  websites: {
+    type: [String]
+  },
   bio: {
     type: String
   },

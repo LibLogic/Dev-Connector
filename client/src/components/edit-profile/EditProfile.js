@@ -21,6 +21,7 @@ class CreateProfile extends Component {
       location: "",
       status: "",
       skills: "",
+      websites: "",
       githubusername: "",
       bio: "",
       twitter: "",
@@ -44,6 +45,9 @@ class CreateProfile extends Component {
 
         // Bring skills array back to csv
         const skillsCSV = profile.skills.join(",");
+
+        // Bring websites array back to csv
+        const websitesCSV = profile.websites.join(", ");
 
         // If profile field does not exist, make empty string
         profile.company = !isEmpty(profile.company) ? profile.company : "";
@@ -80,6 +84,7 @@ class CreateProfile extends Component {
           location: profile.location,
           status: profile.status,
           skills: skillsCSV,
+          websites: websitesCSV,
           githubusername: profile.githubusername,
           bio: profile.bio,
           twitter: profile.twitter,
@@ -106,6 +111,7 @@ class CreateProfile extends Component {
         location: this.state.location,
         status: this.state.status,
         skills: this.state.skills,
+        websites: this.state.websites,
         githubusername: this.state.githubusername,
         bio: this.state.bio,
         twitter: this.state.twitter,
@@ -242,6 +248,14 @@ class CreateProfile extends Component {
                   onChange={this.onChange}
                   error={errors.skills}
                   info="Please use comma separated values (eg. HTML,CSS,Javascript,PHP)"
+                />
+                <TextFieldGroup
+                  placeholder="Websites (created or maintained by you)"
+                  name="websites"
+                  value={this.state.websites}
+                  onChange={this.onChange}
+                  error={errors.websites}
+                  info="Please separate sites with a comma"
                 />
                 <TextFieldGroup
                   placeholder="Github User Name"

@@ -122,6 +122,13 @@ router.post(
       profileFields.skills = req.body.skills.split(",");
     }
 
+    // Websites - Split into array
+    if (typeof req.body.websites !== "undefined") {
+      profileFields.websites = req.body.websites
+        .split(",")
+        .map(website => website.trim());
+    }
+
     // Social
     profileFields.social = {};
     if (req.body.youtube) profileFields.social.youtube = req.body.youtube;

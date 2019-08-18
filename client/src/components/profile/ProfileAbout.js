@@ -18,6 +18,16 @@ class ProfileAbout extends Component {
       </div>
     ));
 
+    const websites = profile.websites.map((website, index) => (
+      <div key={index} className="p-3">
+        <i className="fa fa-globe" />
+        <a href={`http://${website}`} target="_blank" rel="noopener noreferrer">
+          {" "}
+          {website}
+        </a>
+      </div>
+    ));
+
     return (
       <div className="row">
         <div className="col-md-12">
@@ -37,6 +47,19 @@ class ProfileAbout extends Component {
                 {skills}
               </div>
             </div>
+            {profile.websites[0] === "" ? null : (
+              <div>
+                <hr />
+                <h3 className="text-center text-info">
+                  Some Websites Built By {firstName}
+                </h3>
+                <div className="row">
+                  <div className="d-flex flex-wrap justify-content-center align-items-center">
+                    {websites}
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
