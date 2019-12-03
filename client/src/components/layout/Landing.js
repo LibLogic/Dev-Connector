@@ -20,7 +20,7 @@ class Landing extends Component {
                 <h1 className="display-3 mb-4">LibLogic Connector</h1>
                 <p className="lead">
                   {" "}
-                  Create Link developer profile/portfolio, share posts and get
+                  Create — Link developer profiles/portfolios, share posts and get
                   help from other developers
                 </p>
                 <hr />
